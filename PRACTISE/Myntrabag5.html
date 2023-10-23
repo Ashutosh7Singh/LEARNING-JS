@@ -1,13 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="stylesheet" href="/CSS/MyntraBag.css">
-</head>
-<body>
-  <button class="bag-button" onclick="alert('Item has been added to Bag');">Add to Bag</button>
-  <button class="wish-button" onclick="alert('Item has been added to the wishlist')"></button>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/CSS/MyntraBag.css" />
+    
+  </head>
+  <body>
+    <button`
+      class="bag-button"
+      onclick="
+        cartQuatity +=1;
+        document.querySelector('#cart-summary').innerText = `Your Bag has items  ${cartQuatity}  items`; ">
+
+      Add to Bag
+
+    </button>
+    <button
+      class="wish-button"
+      onclick="
+      cartQuatity -=1;
+      document.querySelector('#cart-summary').innerText = `Your Bag has items  ${cartQuatity}  items`;  "
+    >
+      Move to wishlist
+    </button>
+    <button
+      class="bag-button"
+      onclick="cartQuatity+=2;
+        document.querySelector('#cart-summary').innerText = `Your Bag has items  ${cartQuatity}  items`;
+    "
+    >
+      Add 1+1 Sale Item
+    </button>
+    <h1 id="cart-summary"></h1>
+    <script>
+      let cartQuatity = 0;
+      document.querySelector(
+        "#cart-summary"
+      ).innerText = `Your Bag has items  ${cartQuatity}  items`;
+    </script>
+  </body>
 </html>
