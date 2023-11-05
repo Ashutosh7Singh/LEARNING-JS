@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- Q1.create an array of number[5,6] add 4 at the begninning and 7 at the end if the array -->
+    <!-- Q2:Create a method to return an element at a particular position in the array. -->
+    <!-- Q3:Create an array copy using slice method. -->
+    <!-- Q4:Create a while loop that exists after counting 5 prime number -->
+    <!-- Q6:Create a loop that print 1 to 10 in reverse order -->
+    <!-- Q7:Using continue print only positive number form the given array -->
+    <script>
+      /*
+    Ans:1
+    let arr=[5,6];
+    arr.push(7);// push is used to add in the last of index
+    arr.unshift(4);//unshift is used to add in the first of the index
+    console.log(arr);
+  */
+    /*
+      Ans:2
+      function getElement(arr,position){
+      return arr[position-1];
+      }
+      arr=[1,2,3,98,5,6,7,8,9]
+      console.log(getElement(arr,4));
+    */
+
+    /*
+      Ans:4
+      function arrCopy(arr){
+      return arr.slice(0,arr.length);
+      }
+      let arr=[4,5,6,7];
+      console.log(arr);
+
+    */
+   /*
+      function isPrime(num){
+      for(let i=2;i<num;i++){
+        if(num%i=== 0){
+          return false;
+        }
+      } 
+        return   true;
+      }
+      
+      let num=2;
+      let i=0;
+      while(i<5){
+        if(isPrime(num)){
+          console.log(num);
+          i++;
+        }
+        num++;
+      }
+*/
+/*
+ans:6
+for(let i=10;i>0;i--){
+  console.log(i);
+}
+for (let i=0;i<10;i++){
+  console.log(10-i);
+}
+*/
+ /*
+let num=[1,-6,5,7,-98];
+for(let i=1;i<num.length;i++){
+  if(num[i] < 0) continue;
+  console.log(num
+  [i]);
+}
+*/
+let arr=['kg','coading','javascript','course','is','best']
+let result ='';
+
+for(let i=0;i<arr.length;i++){
+  result += arr[i] + ' ';
+}
+console.log(result);
+
+    </script>
+  </body>
+</html>
