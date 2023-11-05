@@ -1,0 +1,26 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body{
+  text-align: center; 
+}
+.button-choice{
+  background-color: #62c081;
+  border-radius: 45px;
+  color: #fff;
+  padding: 0.8rem 2.3rem;
+  border: none;
+}
+
+img{
+  border-radius: 45px;
+  height: 195px;
+  width: 195px;
+}
+
+.button-choice:hover{
+  color: #e84949;
+}

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pracrise Exercise</title>
+  </head>
+  <style>
+    #my-button {
+      height: 50px;
+      width: 50px;
+      font-size: 35px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .js-odd {
+      background-color: chocolate;
+    }
+    .js-even {
+      background-color: lawngreen;
+    }
+  </style>
+  <body>
+    <!-- Q1.Display good morning,afternoon and night based on current hour -->
+    <!-- Q2.Add the name to the output of Q1 -->
+    <!-- Q3.Create a Button which shows the number how mainy times it has been pressed. -->
+    <!-- Q3.1 It has diffrent color for when it has been pressed odd or even times -->
+    <!-- Q3.2 the click coount should also survive browser after refresh -->
+    <h3 id="greeting"></h3>
+    <button id="my-button" onclick="buttonPressed()">0</button>
+    <script>
+      let noOfTimesClicked = localStorage.getItem('noOfTimesClicked'|| 0);
+
+      function buttonPressed() {
+        noOfTimesClicked++;
+        localStorage.setItem('noOfTimesClicked',noOfTimesClicked);
+        updateButton() 
+      }
+      function updateButton() {
+          let button = document.querySelector("#my-button");
+          if (noOfTimesClicked % 2 == 0) {
+            button.classList.remove("js-odd");
+            button.classList.add("js-even");
+          } else {
+            button.classList.remove("js-even");
+            button.classList.add("js-odd");
+          }
+          button.innerText = noOfTimesClicked;
+        
+      }
+
+      function dogreeting(person = "Ashu") {
+        let date = new Date();
+        let hours = date.getHours();
+        let heading = document.querySelector("#greeting");
+        console.log(hours);
+        if (hours > 5 && hours < 12) {
+          heading.innerText = `Good Morning${person}`;
+        } else if (hours > 12 && hours < 18) {
+          heading.innerText = `Good Afternoon ${person}`;
+        } else {
+          heading.innerText = `Good Night ${person}`;
+        }
+      }
+      dogreeting("Ashutohs Singh");
+      updateButton() ;
+    </script>
+  </body>
+</html>
